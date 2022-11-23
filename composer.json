@@ -47,5 +47,11 @@
 		"post-autoload-dump": [
 			"@typo3-cms-scripts"
 		]
+	},
+	"repositories": {
+		"local": {
+			"type": "path",
+			"url": "packages/*"
+		}
 	}
 }
