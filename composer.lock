@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d4a3688e91ce611f704e30bf63ebded",
+    "content-hash": "ad3f2e1e2b28fe706649e891abafabe5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1405,6 +1405,53 @@
                 }
             ],
             "time": "2022-05-31T06:51:43+00:00"
+        },
+        {
+            "name": "library/library",
+            "version": "dev-st-01",
+            "dist": {
+                "type": "path",
+                "url": "packages/library",
+                "reference": "117e03bf9d585e87c561c063843f506ce8e6ee21"
+            },
+            "require": {
+                "typo3/cms-core": "^11.5"
+            },
+            "replace": {
+                "typo3-ter/library": "self.version"
+            },
+            "require-dev": {
+                "typo3/testing-framework": "^6.9.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": ".Build/public",
+                    "extension-key": "library"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Library\\Library\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Library\\Library\\Tests\\": "Tests"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "model for library",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "lolli42/finediff",
@@ -7043,7 +7090,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "library/library": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
