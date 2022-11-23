@@ -1,0 +1,71 @@
+plugin.tx_library_library {
+    view {
+        templateRootPaths.0 = EXT:library/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_library_library.view.templateRootPath}
+        partialRootPaths.0 = EXT:library/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_library_library.view.partialRootPath}
+        layoutRootPaths.0 = EXT:library/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_library_library.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_library_library.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+# these classes are only used in auto-generated templates
+plugin.tx_library._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-library table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
+
+    .tx-library table th {
+        font-weight:bold;
+    }
+
+    .tx-library table td {
+        vertical-align:top;
+    }
+
+    .typo3-messages .message-error {
+        color:red;
+    }
+
+    .typo3-messages .message-ok {
+        color:green;
+    }
+)
+
+# Module configuration
+module.tx_library_web_librarybooks {
+    persistence {
+        storagePid = {$module.tx_library_books.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:library/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_library_books.view.templateRootPath}
+        partialRootPaths.0 = EXT:library/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_library_books.view.partialRootPath}
+        layoutRootPaths.0 = EXT:library/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_library_books.view.layoutRootPath}
+    }
+}

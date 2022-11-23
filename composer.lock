@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e38d3aed3f17f9ee095a3ffe43711bd",
+    "content-hash": "ad3f2e1e2b28fe706649e891abafabe5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -836,6 +836,81 @@
             "time": "2022-02-21T09:13:59+00:00"
         },
         {
+            "name": "friendsoftypo3/extension-builder",
+            "version": "v11.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/extension_builder.git",
+                "reference": "848ac81ec72a0438b64589b6cf25d262d2e01ac0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/extension_builder/zipball/848ac81ec72a0438b64589b6cf25d262d2e01ac0",
+                "reference": "848ac81ec72a0438b64589b6cf25d262d2e01ac0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nikic/php-parser": "^4.10.4",
+                "php": "^7.4 || ^8.0",
+                "typo3/cms-backend": "^11.4",
+                "typo3/cms-core": "^11.4"
+            },
+            "replace": {
+                "typo3-ter/extension-builder": "self.version"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "roave/security-advisories": "dev-latest",
+                "sebastian/diff": "^3.0",
+                "typo3/cms-frontend": "^11.4",
+                "typo3/cms-install": "^11.4",
+                "typo3/coding-standards": "^0.3.0",
+                "typo3/testing-framework": "^6.11"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "extension_builder",
+                    "app-dir": ".Build",
+                    "ignore-as-root": false,
+                    "web-dir": ".Build/public"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "EBT\\ExtensionBuilder\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Nico de Haen",
+                    "role": "Developer"
+                },
+                {
+                    "name": "extension_builder Development Team",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tool to kickstart and maintain TYPO3 extensions",
+            "homepage": "https://extensions.typo3.org/extension/extension_builder",
+            "keywords": [
+                "extension",
+                "extension_builder",
+                "typo3"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/friendsoftypo3/extension-builder/main/en-us/",
+                "issues": "https://github.com/FriendsOfTYPO3/extension_builder/issues",
+                "source": "https://github.com/FriendsOfTYPO3/extension_builder"
+            },
+            "time": "2022-10-11T06:22:01+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.5.0",
             "source": {
@@ -1330,6 +1405,53 @@
                 }
             ],
             "time": "2022-05-31T06:51:43+00:00"
+        },
+        {
+            "name": "library/library",
+            "version": "dev-st-01",
+            "dist": {
+                "type": "path",
+                "url": "packages/library",
+                "reference": "117e03bf9d585e87c561c063843f506ce8e6ee21"
+            },
+            "require": {
+                "typo3/cms-core": "^11.5"
+            },
+            "replace": {
+                "typo3-ter/library": "self.version"
+            },
+            "require-dev": {
+                "typo3/testing-framework": "^6.9.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "web-dir": ".Build/public",
+                    "extension-key": "library"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Library\\Library\\": "Classes"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Library\\Library\\Tests\\": "Tests"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "model for library",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "lolli42/finediff",
@@ -6968,7 +7090,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "library/library": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

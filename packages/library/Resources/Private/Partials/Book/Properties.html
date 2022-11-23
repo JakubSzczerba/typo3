@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="tx-library">
+	<tr>
+		<td><f:translate key="tx_library_domain_model_book.title" /></td>
+		<td>{book.title}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_library_domain_model_book.description" /></td>
+		<td>{book.description}</td>
+	</tr>
+	<tr>
+		<td><f:translate key="tx_library_domain_model_book.cover" /></td>
+		<td>
+				<f:image src="{book.cover.originalResource.publicUrl}" width="200"/>
+            </td>
+	</tr>
+</table>
+</html>
